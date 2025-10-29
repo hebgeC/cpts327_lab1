@@ -26,20 +26,20 @@ enter C                                                                         
  RET(EBP+4)= 0x08049604                                                                              | NOTE: 
                                                                                                      | NOTE: 
 [Frame Chain]                                                                                        | NOTE: 
- #00 FP=0xffe493e8 prevFP=0xffe49428                                                                 | NOTE: 
- #01 FP=0xffe49428 prevFP=0xffe49458                                                                 | NOTE: 
- #02 FP=0xffe49458 prevFP=0xffe49488                                                                 | NOTE: 
- #03 FP=0xffe49488 prevFP=0xffe494e8                                                                 | NOTE: 
+ #00 FP=0xffe493e8 prevFP=0xffe49428                                                                 | NOTE: EBP (frame pointer) to function C. called by function B
+ #01 FP=0xffe49428 prevFP=0xffe49458                                                                 | NOTE: EBP to function B. called by function A
+ #02 FP=0xffe49458 prevFP=0xffe49488                                                                 | NOTE: EBP to function A. called by Main()
+ #03 FP=0xffe49488 prevFP=0xffe494e8                                                                 | NOTE: EBP to Main()
  #04 FP=0xffe494e8 prevFP=0x00000000                                                                 | NOTE: 
  ... -> NULL (or limit)                                                                              | NOTE: 
                                                                                                      | NOTE: 
 [Stack Dump] from p=0xffe493f4, 128 words (4B each)                                                  | NOTE: 
- p[000] @ 0xffe493f4 : 0x0000000a                                                                    | NOTE: 
- p[001] @ 0xffe493f8 : 0x0000000b                                                                    | NOTE: 
- p[002] @ 0xffe493fc : 0x0000000c                                                                    | NOTE: 
- p[003] @ 0xffe49400 : 0x0000000d                                                                    | NOTE: 
- p[004] @ 0xffe49404 : 0xffe493f4                                                                    | NOTE: 
- p[005] @ 0xffe49408 : 0x08049604                                                                    | NOTE: 
+ p[000] @ 0xffe493f4 : 0x0000000a                                                                    | NOTE: C local u=10
+ p[001] @ 0xffe493f8 : 0x0000000b                                                                    | NOTE: C local v=11
+ p[002] @ 0xffe493fc : 0x0000000c                                                                    | NOTE: C local w=12
+ p[003] @ 0xffe49400 : 0x0000000d                                                                    | NOTE: C local i=13
+ p[004] @ 0xffe49404 : 0xffe493f4                                                                    | NOTE: C local p points to u
+ p[005] @ 0xffe49408 : 0x08049604                                                                    | NOTE: holds RET for C
  p[006] @ 0xffe4940c : 0xd68ae700                                                                    | NOTE: 
  p[007] @ 0xffe49410 : 0xeff2dd40                                                                    | NOTE: 
  p[008] @ 0xffe49414 : 0x0804a1a9                                                                    | NOTE: 
@@ -47,34 +47,34 @@ enter C                                                                         
  p[010] @ 0xffe4941c : 0x0804bff4                                                                    | NOTE: 
  p[011] @ 0xffe49420 : 0xffe49500                                                                    | NOTE: 
  p[012] @ 0xffe49424 : 0xffe49fb6                                                                    | NOTE: 
- p[013] @ 0xffe49428 : 0xffe49458                                                                    | NOTE: 
- p[014] @ 0xffe4942c : 0x08049542                                                                    | NOTE: 
- p[015] @ 0xffe49430 : 0x00000007                                                                    | NOTE: 
- p[016] @ 0xffe49434 : 0x00000008                                                                    | NOTE: 
+ p[013] @ 0xffe49428 : 0xffe49458                                                                    | NOTE: EBP for C. holds EBP for B
+ p[014] @ 0xffe4942c : 0x08049542                                                                    | NOTE: RET for B (0xffe49428 + 4)
+ p[015] @ 0xffe49430 : 0x00000007                                                                    | NOTE: C param x=7
+ p[016] @ 0xffe49434 : 0x00000008                                                                    | NOTE: C param y=8
  p[017] @ 0xffe49438 : 0xffe49464                                                                    | NOTE: 
  p[018] @ 0xffe4943c : 0xffe49448                                                                    | NOTE: 
- p[019] @ 0xffe49440 : 0x00000007                                                                    | NOTE: 
- p[020] @ 0xffe49444 : 0x00000008                                                                    | NOTE: 
- p[021] @ 0xffe49448 : 0x00000009                                                                    | NOTE: 
+ p[019] @ 0xffe49440 : 0x00000007                                                                    | NOTE: B local g=7
+ p[020] @ 0xffe49444 : 0x00000008                                                                    | NOTE: B local h=8
+ p[021] @ 0xffe49448 : 0x00000009                                                                    | NOTE: B local i=9 
  p[022] @ 0xffe4944c : 0xd68ae700                                                                    | NOTE: 
  p[023] @ 0xffe49450 : 0xffe49500                                                                    | NOTE: 
  p[024] @ 0xffe49454 : 0x0804bff4                                                                    | NOTE: 
- p[025] @ 0xffe49458 : 0xffe49488                                                                    | NOTE: 
- p[026] @ 0xffe4945c : 0x08049489                                                                    | NOTE: 
- p[027] @ 0xffe49460 : 0x00000004                                                                    | NOTE: 
- p[028] @ 0xffe49464 : 0x00000005                                                                    | NOTE: 
+ p[025] @ 0xffe49458 : 0xffe49488                                                                    | NOTE: EBP for B. hold EBP for A
+ p[026] @ 0xffe4945c : 0x08049489                                                                    | NOTE: RET for B
+ p[027] @ 0xffe49460 : 0x00000004                                                                    | NOTE: B param x=4
+ p[028] @ 0xffe49464 : 0x00000005                                                                    | NOTE: B param y=5
  p[029] @ 0xffe49468 : 0xffe49494                                                                    | NOTE: 
  p[030] @ 0xffe4946c : 0xffe49478                                                                    | NOTE: 
- p[031] @ 0xffe49470 : 0x00000004                                                                    | NOTE: 
- p[032] @ 0xffe49474 : 0x00000005                                                                    | NOTE: 
- p[033] @ 0xffe49478 : 0x00000006                                                                    | NOTE: 
+ p[031] @ 0xffe49470 : 0x00000004                                                                    | NOTE: A local d=4
+ p[032] @ 0xffe49474 : 0x00000005                                                                    | NOTE: A local e=5
+ p[033] @ 0xffe49478 : 0x00000006                                                                    | NOTE: A local f=6
  p[034] @ 0xffe4947c : 0xd68ae700                                                                    | NOTE: 
  p[035] @ 0xffe49480 : 0x0804a0ec                                                                    | NOTE: 
  p[036] @ 0xffe49484 : 0x0804bff4                                                                    | NOTE: 
- p[037] @ 0xffe49488 : 0xffe494e8                                                                    | NOTE: 
- p[038] @ 0xffe4948c : 0x080493c9                                                                    | NOTE: 
- p[039] @ 0xffe49490 : 0x00000001                                                                    | NOTE: 
- p[040] @ 0xffe49494 : 0x00000002                                                                    | NOTE: 
+ p[037] @ 0xffe49488 : 0xffe494e8                                                                    | NOTE: EBP for A. hold EPB for Main()
+ p[038] @ 0xffe4948c : 0x080493c9                                                                    | NOTE: RET for Main()
+ p[039] @ 0xffe49490 : 0x00000001                                                                    | NOTE: A param x=1
+ p[040] @ 0xffe49494 : 0x00000002                                                                    | NOTE: A param y=2
  p[041] @ 0xffe49498 : 0xffe49fb6                                                                    | NOTE: 
  p[042] @ 0xffe4949c : 0xffe494c4                                                                    | NOTE: 
  p[043] @ 0xffe494a0 : 0xeff82fe8                                                                    | NOTE: 
@@ -84,9 +84,9 @@ enter C                                                                         
  p[047] @ 0xffe494b0 : 0xeff4d570                                                                    | NOTE: 
  p[048] @ 0xffe494b4 : 0xeff4d000                                                                    | NOTE: 
  p[049] @ 0xffe494b8 : 0x00000000                                                                    | NOTE: 
- p[050] @ 0xffe494bc : 0x00000001                                                                    | NOTE: 
- p[051] @ 0xffe494c0 : 0x00000002                                                                    | NOTE: 
- p[052] @ 0xffe494c4 : 0x00000003                                                                    | NOTE: 
+ p[050] @ 0xffe494bc : 0x00000001                                                                    | NOTE: Main local a=1
+ p[051] @ 0xffe494c0 : 0x00000002                                                                    | NOTE: Main local b=2
+ p[052] @ 0xffe494c4 : 0x00000003                                                                    | NOTE: Main local c=3
  p[053] @ 0xffe494c8 : 0x00000004                                                                    | NOTE: 
  p[054] @ 0xffe494cc : 0xd68ae700                                                                    | NOTE: 
  p[055] @ 0xffe494d0 : 0xffffffff                                                                    | NOTE: 
@@ -95,15 +95,15 @@ enter C                                                                         
  p[058] @ 0xffe494dc : 0xeff2ce34                                                                    | NOTE: 
  p[059] @ 0xffe494e0 : 0xffe495c8                                                                    | NOTE: 
  p[060] @ 0xffe494e4 : 0xeff82b60                                                                    | NOTE: 
- p[061] @ 0xffe494e8 : 0x00000000                                                                    | NOTE: 
- p[062] @ 0xffe494ec : 0xefd28c75                                                                    | NOTE: 
+ p[061] @ 0xffe494e8 : 0x00000000                                                                    | NOTE: Main EBP
+ p[062] @ 0xffe494ec : 0xefd28c75                                                                    | NOTE: RET
  p[063] @ 0xffe494f0 : 0x00000000                                                                    | NOTE: 
  p[064] @ 0xffe494f4 : 0x00000000                                                                    | NOTE: 
  p[065] @ 0xffe494f8 : 0xefd41b59                                                                    | NOTE: 
  p[066] @ 0xffe494fc : 0xefd28c75                                                                    | NOTE: 
- p[067] @ 0xffe49500 : 0x00000004                                                                    | NOTE: 
- p[068] @ 0xffe49504 : 0xffe495b4                                                                    | NOTE: 
- p[069] @ 0xffe49508 : 0xffe495c8                                                                    | NOTE: 
+ p[067] @ 0xffe49500 : 0x00000004                                                                    | NOTE: argc=4
+ p[068] @ 0xffe49504 : 0xffe495b4                                                                    | NOTE: argv points to start of argv[]
+ p[069] @ 0xffe49508 : 0xffe495c8                                                                    | NOTE: env
  p[070] @ 0xffe4950c : 0xffe49520                                                                    | NOTE: 
  p[071] @ 0xffe49510 : 0xeff2ce34                                                                    | NOTE: 
  p[072] @ 0xffe49514 : 0x0804909d                                                                    | NOTE: 
@@ -146,12 +146,12 @@ enter C                                                                         
  p[109] @ 0xffe495a8 : 0xffe495ac                                                                    | NOTE: 
  p[110] @ 0xffe495ac : 0xeff83a20                                                                    | NOTE: 
  p[111] @ 0xffe495b0 : 0x00000004                                                                    | NOTE: 
- p[112] @ 0xffe495b4 : 0xffe49fa6                                                                    | NOTE: 
+ p[112] @ 0xffe495b4 : 0xffe49fa6                                                                    | NOTE: argv[] starts
  p[113] @ 0xffe495b8 : 0xffe49fae                                                                    | NOTE: 
  p[114] @ 0xffe495bc : 0xffe49fb2                                                                    | NOTE: 
  p[115] @ 0xffe495c0 : 0xffe49fb6                                                                    | NOTE: 
  p[116] @ 0xffe495c4 : 0x00000000                                                                    | NOTE: 
- p[117] @ 0xffe495c8 : 0xffe49fbc                                                                    | NOTE: 
+ p[117] @ 0xffe495c8 : 0xffe49fbc                                                                    | NOTE: env starts
  p[118] @ 0xffe495cc : 0xffe49fcc                                                                    | NOTE: 
  p[119] @ 0xffe495d0 : 0xffe4a02a                                                                    | NOTE: 
  p[120] @ 0xffe495d4 : 0xffe4a03d                                                                    | NOTE: 
