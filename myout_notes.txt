@@ -1,0 +1,168 @@
+enter main                                                                                           | NOTE: 
+&argc=ffe49500 argv=ffe495b4 env=ffe495c8                                                            | NOTE: 
+&a=ffe494bc &b=ffe494c0 &c=ffe494c4                                                                  | NOTE: 
+                                                                                                     | NOTE: 
+[ARGV]                                                                                               | NOTE: 
+argc=4                                                                                               | NOTE: 
+ argv[0]="./a.out" &argv[0]=ffe495b4 argv[0]_ptr=ffe49fa6                                            | NOTE: 
+ argv[1]="one" &argv[1]=ffe495b8 argv[1]_ptr=ffe49fae                                                | NOTE: 
+ argv[2]="two" &argv[2]=ffe495bc argv[2]_ptr=ffe49fb2                                                | NOTE: 
+ argv[3]="three" &argv[3]=ffe495c0 argv[3]_ptr=ffe49fb6                                              | NOTE: 
+                                                                                                     | NOTE: 
+enter A                                                                                              | NOTE: 
+[A locals ] &d=ffe49470 &e=ffe49474 &f=ffe49478                                                      | NOTE: 
+[A params ] &x=ffe49490 &y=ffe49494                                                                  | NOTE: 
+                                                                                                     | NOTE: 
+enter B                                                                                              | NOTE: 
+[B locals ] &g=ffe49440 &h=ffe49444 &i=ffe49448                                                      | NOTE: 
+[B params ] &x=ffe49460 &y=ffe49464                                                                  | NOTE: 
+                                                                                                     | NOTE: 
+enter C                                                                                              | NOTE: 
+[C locals ] &u=ffe493f4 &v=ffe493f8 &w=ffe493fc &i=ffe49400 &p=ffe49404                              | NOTE: 
+[C params ] &x=ffe49430 &y=ffe49434                                                                  | NOTE: 
+                                                                                                     | NOTE: 
+[FP/Saved RET]                                                                                       | NOTE: 
+ FP(C.EBP) = 0xffe493e8                                                                              | NOTE: 
+ RET(EBP+4)= 0x08049604                                                                              | NOTE: 
+                                                                                                     | NOTE: 
+[Frame Chain]                                                                                        | NOTE: 
+ #00 FP=0xffe493e8 prevFP=0xffe49428                                                                 | NOTE: 
+ #01 FP=0xffe49428 prevFP=0xffe49458                                                                 | NOTE: 
+ #02 FP=0xffe49458 prevFP=0xffe49488                                                                 | NOTE: 
+ #03 FP=0xffe49488 prevFP=0xffe494e8                                                                 | NOTE: 
+ #04 FP=0xffe494e8 prevFP=0x00000000                                                                 | NOTE: 
+ ... -> NULL (or limit)                                                                              | NOTE: 
+                                                                                                     | NOTE: 
+[Stack Dump] from p=0xffe493f4, 128 words (4B each)                                                  | NOTE: 
+ p[000] @ 0xffe493f4 : 0x0000000a                                                                    | NOTE: 
+ p[001] @ 0xffe493f8 : 0x0000000b                                                                    | NOTE: 
+ p[002] @ 0xffe493fc : 0x0000000c                                                                    | NOTE: 
+ p[003] @ 0xffe49400 : 0x0000000d                                                                    | NOTE: 
+ p[004] @ 0xffe49404 : 0xffe493f4                                                                    | NOTE: 
+ p[005] @ 0xffe49408 : 0x08049604                                                                    | NOTE: 
+ p[006] @ 0xffe4940c : 0xd68ae700                                                                    | NOTE: 
+ p[007] @ 0xffe49410 : 0xeff2dd40                                                                    | NOTE: 
+ p[008] @ 0xffe49414 : 0x0804a1a9                                                                    | NOTE: 
+ p[009] @ 0xffe49418 : 0xffe49434                                                                    | NOTE: 
+ p[010] @ 0xffe4941c : 0x0804bff4                                                                    | NOTE: 
+ p[011] @ 0xffe49420 : 0xffe49500                                                                    | NOTE: 
+ p[012] @ 0xffe49424 : 0xffe49fb6                                                                    | NOTE: 
+ p[013] @ 0xffe49428 : 0xffe49458                                                                    | NOTE: 
+ p[014] @ 0xffe4942c : 0x08049542                                                                    | NOTE: 
+ p[015] @ 0xffe49430 : 0x00000007                                                                    | NOTE: 
+ p[016] @ 0xffe49434 : 0x00000008                                                                    | NOTE: 
+ p[017] @ 0xffe49438 : 0xffe49464                                                                    | NOTE: 
+ p[018] @ 0xffe4943c : 0xffe49448                                                                    | NOTE: 
+ p[019] @ 0xffe49440 : 0x00000007                                                                    | NOTE: 
+ p[020] @ 0xffe49444 : 0x00000008                                                                    | NOTE: 
+ p[021] @ 0xffe49448 : 0x00000009                                                                    | NOTE: 
+ p[022] @ 0xffe4944c : 0xd68ae700                                                                    | NOTE: 
+ p[023] @ 0xffe49450 : 0xffe49500                                                                    | NOTE: 
+ p[024] @ 0xffe49454 : 0x0804bff4                                                                    | NOTE: 
+ p[025] @ 0xffe49458 : 0xffe49488                                                                    | NOTE: 
+ p[026] @ 0xffe4945c : 0x08049489                                                                    | NOTE: 
+ p[027] @ 0xffe49460 : 0x00000004                                                                    | NOTE: 
+ p[028] @ 0xffe49464 : 0x00000005                                                                    | NOTE: 
+ p[029] @ 0xffe49468 : 0xffe49494                                                                    | NOTE: 
+ p[030] @ 0xffe4946c : 0xffe49478                                                                    | NOTE: 
+ p[031] @ 0xffe49470 : 0x00000004                                                                    | NOTE: 
+ p[032] @ 0xffe49474 : 0x00000005                                                                    | NOTE: 
+ p[033] @ 0xffe49478 : 0x00000006                                                                    | NOTE: 
+ p[034] @ 0xffe4947c : 0xd68ae700                                                                    | NOTE: 
+ p[035] @ 0xffe49480 : 0x0804a0ec                                                                    | NOTE: 
+ p[036] @ 0xffe49484 : 0x0804bff4                                                                    | NOTE: 
+ p[037] @ 0xffe49488 : 0xffe494e8                                                                    | NOTE: 
+ p[038] @ 0xffe4948c : 0x080493c9                                                                    | NOTE: 
+ p[039] @ 0xffe49490 : 0x00000001                                                                    | NOTE: 
+ p[040] @ 0xffe49494 : 0x00000002                                                                    | NOTE: 
+ p[041] @ 0xffe49498 : 0xffe49fb6                                                                    | NOTE: 
+ p[042] @ 0xffe4949c : 0xffe494c4                                                                    | NOTE: 
+ p[043] @ 0xffe494a0 : 0xeff82fe8                                                                    | NOTE: 
+ p[044] @ 0xffe494a4 : 0x00000018                                                                    | NOTE: 
+ p[045] @ 0xffe494a8 : 0xffe495c8                                                                    | NOTE: 
+ p[046] @ 0xffe494ac : 0xffe495b4                                                                    | NOTE: 
+ p[047] @ 0xffe494b0 : 0xeff4d570                                                                    | NOTE: 
+ p[048] @ 0xffe494b4 : 0xeff4d000                                                                    | NOTE: 
+ p[049] @ 0xffe494b8 : 0x00000000                                                                    | NOTE: 
+ p[050] @ 0xffe494bc : 0x00000001                                                                    | NOTE: 
+ p[051] @ 0xffe494c0 : 0x00000002                                                                    | NOTE: 
+ p[052] @ 0xffe494c4 : 0x00000003                                                                    | NOTE: 
+ p[053] @ 0xffe494c8 : 0x00000004                                                                    | NOTE: 
+ p[054] @ 0xffe494cc : 0xd68ae700                                                                    | NOTE: 
+ p[055] @ 0xffe494d0 : 0xffffffff                                                                    | NOTE: 
+ p[056] @ 0xffe494d4 : 0xefd1593c                                                                    | NOTE: 
+ p[057] @ 0xffe494d8 : 0xffe49500                                                                    | NOTE: 
+ p[058] @ 0xffe494dc : 0xeff2ce34                                                                    | NOTE: 
+ p[059] @ 0xffe494e0 : 0xffe495c8                                                                    | NOTE: 
+ p[060] @ 0xffe494e4 : 0xeff82b60                                                                    | NOTE: 
+ p[061] @ 0xffe494e8 : 0x00000000                                                                    | NOTE: 
+ p[062] @ 0xffe494ec : 0xefd28c75                                                                    | NOTE: 
+ p[063] @ 0xffe494f0 : 0x00000000                                                                    | NOTE: 
+ p[064] @ 0xffe494f4 : 0x00000000                                                                    | NOTE: 
+ p[065] @ 0xffe494f8 : 0xefd41b59                                                                    | NOTE: 
+ p[066] @ 0xffe494fc : 0xefd28c75                                                                    | NOTE: 
+ p[067] @ 0xffe49500 : 0x00000004                                                                    | NOTE: 
+ p[068] @ 0xffe49504 : 0xffe495b4                                                                    | NOTE: 
+ p[069] @ 0xffe49508 : 0xffe495c8                                                                    | NOTE: 
+ p[070] @ 0xffe4950c : 0xffe49520                                                                    | NOTE: 
+ p[071] @ 0xffe49510 : 0xeff2ce34                                                                    | NOTE: 
+ p[072] @ 0xffe49514 : 0x0804909d                                                                    | NOTE: 
+ p[073] @ 0xffe49518 : 0x00000004                                                                    | NOTE: 
+ p[074] @ 0xffe4951c : 0xffe495b4                                                                    | NOTE: 
+ p[075] @ 0xffe49520 : 0xeff2ce34                                                                    | NOTE: 
+ p[076] @ 0xffe49524 : 0xffe495c8                                                                    | NOTE: 
+ p[077] @ 0xffe49528 : 0xeff82b60                                                                    | NOTE: 
+ p[078] @ 0xffe4952c : 0x00000000                                                                    | NOTE: 
+ p[079] @ 0xffe49530 : 0x04db36e2                                                                    | NOTE: 
+ p[080] @ 0xffe49534 : 0x68e95cc2                                                                    | NOTE: 
+ p[081] @ 0xffe49538 : 0x00000000                                                                    | NOTE: 
+ p[082] @ 0xffe4953c : 0x00000000                                                                    | NOTE: 
+ p[083] @ 0xffe49540 : 0x00000000                                                                    | NOTE: 
+ p[084] @ 0xffe49544 : 0xeff82b60                                                                    | NOTE: 
+ p[085] @ 0xffe49548 : 0x00000000                                                                    | NOTE: 
+ p[086] @ 0xffe4954c : 0xd68ae700                                                                    | NOTE: 
+ p[087] @ 0xffe49550 : 0xeff83a20                                                                    | NOTE: 
+ p[088] @ 0xffe49554 : 0xefd28c06                                                                    | NOTE: 
+ p[089] @ 0xffe49558 : 0xeff2ce34                                                                    | NOTE: 
+ p[090] @ 0xffe4955c : 0xefd28d38                                                                    | NOTE: 
+ p[091] @ 0xffe49560 : 0xeff4faf4                                                                    | NOTE: 
+ p[092] @ 0xffe49564 : 0x0804bf04                                                                    | NOTE: 
+ p[093] @ 0xffe49568 : 0x00000000                                                                    | NOTE: 
+ p[094] @ 0xffe4956c : 0xeff83000                                                                    | NOTE: 
+ p[095] @ 0xffe49570 : 0x00000000                                                                    | NOTE: 
+ p[096] @ 0xffe49574 : 0xeff60ad0                                                                    | NOTE: 
+ p[097] @ 0xffe49578 : 0xefd28cb9                                                                    | NOTE: 
+ p[098] @ 0xffe4957c : 0x0804bff4                                                                    | NOTE: 
+ p[099] @ 0xffe49580 : 0x00000004                                                                    | NOTE: 
+ p[100] @ 0xffe49584 : 0x08049070                                                                    | NOTE: 
+ p[101] @ 0xffe49588 : 0x00000000                                                                    | NOTE: 
+ p[102] @ 0xffe4958c : 0x08049098                                                                    | NOTE: 
+ p[103] @ 0xffe49590 : 0x0804909d                                                                    | NOTE: 
+ p[104] @ 0xffe49594 : 0x00000004                                                                    | NOTE: 
+ p[105] @ 0xffe49598 : 0xffe495b4                                                                    | NOTE: 
+ p[106] @ 0xffe4959c : 0x00000000                                                                    | NOTE: 
+ p[107] @ 0xffe495a0 : 0x00000000                                                                    | NOTE: 
+ p[108] @ 0xffe495a4 : 0xeff53e00                                                                    | NOTE: 
+ p[109] @ 0xffe495a8 : 0xffe495ac                                                                    | NOTE: 
+ p[110] @ 0xffe495ac : 0xeff83a20                                                                    | NOTE: 
+ p[111] @ 0xffe495b0 : 0x00000004                                                                    | NOTE: 
+ p[112] @ 0xffe495b4 : 0xffe49fa6                                                                    | NOTE: 
+ p[113] @ 0xffe495b8 : 0xffe49fae                                                                    | NOTE: 
+ p[114] @ 0xffe495bc : 0xffe49fb2                                                                    | NOTE: 
+ p[115] @ 0xffe495c0 : 0xffe49fb6                                                                    | NOTE: 
+ p[116] @ 0xffe495c4 : 0x00000000                                                                    | NOTE: 
+ p[117] @ 0xffe495c8 : 0xffe49fbc                                                                    | NOTE: 
+ p[118] @ 0xffe495cc : 0xffe49fcc                                                                    | NOTE: 
+ p[119] @ 0xffe495d0 : 0xffe4a02a                                                                    | NOTE: 
+ p[120] @ 0xffe495d4 : 0xffe4a03d                                                                    | NOTE: 
+ p[121] @ 0xffe495d8 : 0xffe4a051                                                                    | NOTE: 
+ p[122] @ 0xffe495dc : 0xffe4a07e                                                                    | NOTE: 
+ p[123] @ 0xffe495e0 : 0xffe4a095                                                                    | NOTE: 
+ p[124] @ 0xffe495e4 : 0xffe4a0b2                                                                    | NOTE: 
+ p[125] @ 0xffe495e8 : 0xffe4a0de                                                                    | NOTE: 
+ p[126] @ 0xffe495ec : 0xffe4a0fe                                                                    | NOTE: 
+ p[127] @ 0xffe495f0 : 0xffe4a127                                                                    | NOTE: 
+exit C                                                                                               | NOTE: 
+exit B                                                                                               | NOTE: 
+exit A                                                                                               | NOTE: 
+exit main                                                                                            | NOTE: 

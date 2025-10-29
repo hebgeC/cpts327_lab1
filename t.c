@@ -19,7 +19,7 @@ static inline int *getebp(void) {
     __asm__ __volatile__("movl %%ebp, %0" : "=r"(ebp));
     return ebp;
 #else
-#error "getebp() inline asm is for 32-bit x86 (i386) only."
+//#error "getebp() inline asm is for 32-bit x86 (i386) only."
 #endif
 }
 
